@@ -92,8 +92,12 @@ font-size: 20px;
 
 }
 
-.header__list.active {
 
+.header__list.active {
+  border-color: black   ;
+  z-index: 2;
+  height: 100%;
+width: 100vh;
 top: 0;
 }
 
@@ -243,3 +247,35 @@ color: var(--secondary-color);
 .hero__text span{
 color: var(--primary-color);
 }
+
+
+.hero__btn{
+  display: flex;
+  jastify-content:center;
+  gap: 15px;
+  padding-bottom: 25px;
+}
+
+.hero__btn__start{
+  color: wheat;
+  background-color: var(--orimary-color);
+  padding: 14px 24px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.hero__btn__pro{
+  color :var(--orimary-color);
+  padding: 14px 21px;
+  border: 1px solid var(--orimary-color);
+  border-radius: 10px;
+}
+
+.hero__trast{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+

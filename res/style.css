@@ -191,9 +191,8 @@ body {
 
 .hero__preview {
   display: inline-block;
-  font-size: 9px;
+  font-size: 15px;
   font-weight: 600px;
-  position: relative;
 }
 
 .hero__title {
@@ -301,3 +300,28 @@ body {
   }
   
 }
+
+.customers{
+  padding:80px 0;
+      background-color:var(--primary-color) ;
+
+}
+
+.castomer__list{
+  color: white;
+  text-align: center;
+}
+
+.castomer__item{
+margin-bottom: 1px;
+}
+
+.castomer__text{
+  font-size: 43px;
+}
+
+.customers__description{
+  color: white;
+}
+
+

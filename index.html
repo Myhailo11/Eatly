@@ -2,59 +2,79 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="./res/style.css" />
-    <!-- <link rel="shortcut icon" href="./img/icons/favicon.svg" type="image/x-icon"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eatly</title>
+    <title>eatly</title>
   </head>
   <body>
     <header class="header">
       <div class="container">
-        <nav>
+        <nav class="header__nav">
           <a href="/">
             <img src="./img/icons/logo.svg" alt="logo" />
           </a>
           <ul class="header__list">
-            <li class="header__link">Menu
-
-            </li>
-            <li class="header__link">Blog
-
-            </li>
-            <li class="header__link">Pricing
-
-            </li>
-            <li class="header__link">Contact
-
-            </li>
+            <a href="#">
+              <li class="header__link">Menu</li>
+            </a>
+            <a href="#">
+              <li class="header__link">Blog</li>
+            </a>
+            <a href="#">
+              <li class="header__link">Pricing</li>
+            </a>
+            <a href="#">
+              <li class="header__link">Contact</li>
+            </a>
           </ul>
-          <button>Login</button>
-          <button>Sign up</button>
+          <div class="header__buttons">
+            <button class="header__login">Login</button>
+            <button class="header__signup">Sing up</button>
+          </div>
+          <button class="menu__btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
         </nav>
-        <button class="menu__btn">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
       </div>
     </header>
-    <main></main>
-    <section class="hero">
-      <div class="container">
+    <main>
+      <section class="hero">
+        <div class="container">
           <div class="hero__wrapper">
-              <div class="hero__head"> </div>
-              <div class="hero__image"></div>
-              <p class="hero__preview"> </p>
-              <h1 class="hero__title"> Enjoy Foods All Over The <span> World </span></h1>
+            <div class="hero__head">
+              <p class="hero__preview"></p>
+              <h1 class="hero__title">Enjoy Foods All
+                Over The <span>World</span></h1>
               <p class="hero__text">
-                  Eatly helps you set saving goals, 
-                  earn cash back offers, 
-                  Go to disclaimer for more details and get paychecks up to two days early. 
-                  Get a <span> $20 bonus. </span>
+                Eatly help you set saving goals, earn cash back offers, Go to
+                disclaimer for more details and get paychecks up to two days
+                early. Get a $20 bonus.
               </p>
               <div class="hero__btn">
-                  <a href="" class="hero__btn__start"> Get Started </a>
-                  <a href="" class="hero__btn__pro"> Go Pro </a>
+                <a href="" class="hero__btn__start">Get Started</a>
+                <a href="" class="hero__btn__pro">Go Pro</a>
+              </div>
+              <div class="hero__trust">
+              <img class="hero__trust__trust" src="./img/icons/trustpilot-1 1.png" alt="">
+              <img class="hero__trust__star" src="./img/icons/Star.png" alt="">
+              <p class="hero__trust__p">4900+</p>
+            </div>
+            </div>
+            <div class="hero__food">
+              <img class="hero__image"  src="./img/icons/Food.png" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer></footer>
     <script src="./index.js"></script>
   </body>

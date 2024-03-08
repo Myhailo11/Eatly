@@ -368,7 +368,7 @@ body {
 
 .hero__trust__p::before {
   content: "";
-  background-image: url(./img/icons/star.svg);
+  /* background-image: url(../images/icons/stars.svg); */
   width: 70px;
   background-size: cover;
   height: 11px;

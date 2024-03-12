@@ -459,9 +459,55 @@ body {
   background-color: var(--primary-color);
 }
 
+.castomers::before{
+  content:"";
+  position:absolute ;
+  background-image: url(./icons/Vector4.png);
+  top: -30;
+  left: -228px;
+  width: 550px;
+  height: 500px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: rotate(100deg);
+}
+
+.customers::after{
+  content:"";
+  position: absolute;
+  background-image: url(./icos/Vector8.png);
+  bottom:-85px;
+  right: -167px;
+  width: 330px;
+  height: 345px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(25deg);
+}
+
+
+
 .customers__list {
   color: var(--white-color);
   text-align: center;
+  animation-name: customers;
+  animation-duration: 1.5s;
+  animation-duration: 0.5s;
+}
+
+@keyframes customers {
+0% {
+  opacity: 0;
+  transform: translate(100vh);
+}
+50% {
+  opacity: 0.5;
+}
+
+100% {
+  opacity: 1;
+  transform: translate(0vhs);
+}
 }
 
 .customers__item {

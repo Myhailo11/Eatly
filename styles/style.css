@@ -42,6 +42,8 @@ body {
 
 :root {
   --primary-text: 14px;
+  --third-text: 13px;
+  --title-font:30px;
   --primary-color: #5c4eae;
   --header-padding: 35px 0;
   --secondary-color: grey;
@@ -49,6 +51,7 @@ body {
   --accent-color: #201f1f;
   --hero-title: 40px;
   --main-font: "Poppins", sans-serif;
+ 
   --secondary-font: "Inter", sans-serif;
 }
 
@@ -368,7 +371,7 @@ body {
 
 .hero__trust__p::before {
   content: "";
-  /* background-image: url(../images/icons/stars.svg); */
+  background-image: url(./img/icons/star.svg);
   width: 70px;
   background-size: cover;
   height: 11px;
@@ -457,26 +460,29 @@ body {
 .customers {
   padding: 80px 0;
   background-color: var(--primary-color);
+  position: relative;
+  overflow: hidden;
 }
 
-.castomers::before{
-  content:"";
-  position:absolute ;
-  background-image: url(./icons/Vector4.png);
-  top: -30;
-  left: -228px;
+.customers::before{
+  content: "";
+  position: absolute ;
+  background-image: url(./img/icons/custbefore.svg);
+  top: -30px;
+  left: -280px;
   width: 550px;
   height: 500px;
   background-size: contain;
   background-repeat: no-repeat;
-  transition: rotate(100deg);
+  transform: rotate(100deg);
 }
 
+
 .customers::after{
-  content:"";
-  position: absolute;
-  background-image: url(./icos/Vector8.png);
-  bottom:-85px;
+  content: "";
+  position: absolute ;
+  background-image: url(./img/icons/custafter.svg);
+  bottom: -85px;
   right: -167px;
   width: 330px;
   height: 345px;
@@ -484,30 +490,32 @@ body {
   background-repeat: no-repeat;
   transform: rotate(25deg);
 }
-
-
-
 .customers__list {
   color: var(--white-color);
   text-align: center;
+  opacity: 0;
+}
+
+.customers__animation{
   animation-name: customers;
   animation-duration: 1.5s;
-  animation-duration: 0.5s;
+  transition: opacity 0.3s linear ;
+  opacity: 1;
 }
 
 @keyframes customers {
-0% {
-  opacity: 0;
-  transform: translate(100vh);
-}
-50% {
-  opacity: 0.5;
-}
-
-100% {
-  opacity: 1;
-  transform: translate(0vhs);
-}
+  0% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  50% {
+    opacity: 0.5;
+  }
+ 
+  100% {
+    opacity: 1;
+    transform: translateY(0vh);
+  }
 }
 
 .customers__item {
@@ -564,4 +572,56 @@ body {
     margin-left: 67px;
     margin-right: 67px;
   }
+}
+
+
+.quality__text span {
+  color: var(--primary-color);
+}
+
+
+.quality{
+  padding-top: 60px;
+}
+
+
+.quality__text{
+  padding-bottom: 35px;
+}
+.quality__text h1{
+  font-size:var(--title-font);
+  font-weight: 700;
+  padding:0 20px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.quality__list{
+  padding: 0 20px;
+  color: var(--secondary-color);
+  font-size: var(--third-text);
+  list-style:disc;
+  padding-bottom: 35px;
+}
+
+.quality__item:nth-child(1){
+  padding-bottom: 20px;
+}
+
+.quality__btn{
+  color: white;
+  background-color: var(--primary-color);
+  padding: 14px 24px;
+  border-radius: 10px;
+  box-shadow: none;
+  border: none;
+  display: block;
+  margin: 0 auto;
+}
+
+.quality__wrapper{
+  display: flex;
+  justify-content: center;
 }

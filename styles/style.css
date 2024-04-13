@@ -43,15 +43,22 @@ body {
 :root {
   --primary-text: 14px;
   --third-text: 13px;
-  --title-font:30px;
+  --title-font: 30px;
   --primary-color: #5c4eae;
   --header-padding: 35px 0;
   --secondary-color: grey;
   --white-color: white;
   --accent-color: #201f1f;
   --hero-title: 40px;
+  --quality-title: 30px;
+  --manatee-color: #8e97a6;
   --main-font: "Poppins", sans-serif;
- 
+  --healthy-color-text: #daa31a;
+  --healthy-color: #f7edd0;
+  --healthy-color-text-2: #fb471d;
+  --healthy-color-2: #f7c5ba;
+  --healthy-color-text-3: rgba(51, 172, 100, 0.3);
+  --healthy-color-3: #309d5c;
   --secondary-font: "Inter", sans-serif;
 }
 
@@ -64,6 +71,7 @@ body {
 @media screen and (min-width: 767px) {
   :root {
     --hero-title: 55px;
+    --quality-title: 40px;
   }
 }
 
@@ -75,6 +83,7 @@ body {
   :root {
     --primary-text: 16px;
     --section-padding: 125px 0;
+    --third-text: 20px;
   }
 }
 
@@ -267,12 +276,12 @@ body {
 @keyframes header__text {
   0% {
     transform: translateX(-100vh);
-    opacity:0.1 ;
+    opacity: 0.1;
   }
   50% {
-    opacity:0.5 ;
+    opacity: 0.5;
   }
- 
+
   100% {
     transform: translateX(0vh);
     opacity: 1;
@@ -391,7 +400,7 @@ body {
 .hero__food {
   display: flex;
   justify-content: center;
-  animation-name:header__image ;
+  animation-name: header__image;
   animation-duration: 1.2s;
   animation-delay: 0.5s;
 }
@@ -399,12 +408,12 @@ body {
 @keyframes header__image {
   0% {
     transform: translateX(100vh);
-    opacity:0.1 ;
+    opacity: 0.1;
   }
   50% {
-    opacity:0.5 ;
+    opacity: 0.5;
   }
- 
+
   100% {
     transform: translateX(0vh);
     opacity: 1;
@@ -464,9 +473,9 @@ body {
   overflow: hidden;
 }
 
-.customers::before{
+.customers::before {
   content: "";
-  position: absolute ;
+  position: absolute;
   background-image: url(./img/icons/custbefore.svg);
   top: -30px;
   left: -280px;
@@ -477,10 +486,9 @@ body {
   transform: rotate(100deg);
 }
 
-
-.customers::after{
+.customers::after {
   content: "";
-  position: absolute ;
+  position: absolute;
   background-image: url(./img/icons/custafter.svg);
   bottom: -85px;
   right: -167px;
@@ -496,26 +504,11 @@ body {
   opacity: 0;
 }
 
-.customers__animation{
+.customers__animation {
   animation-name: customers;
   animation-duration: 1.5s;
-  transition: opacity 0.3s linear ;
+  transition: opacity 0.3s linear;
   opacity: 1;
-}
-
-@keyframes customers {
-  0% {
-    opacity: 0;
-    transform: translateY(100vh);
-  }
-  50% {
-    opacity: 0.5;
-  }
- 
-  100% {
-    opacity: 1;
-    transform: translateY(0vh);
-  }
 }
 
 .customers__item {
@@ -574,54 +567,413 @@ body {
   }
 }
 
-
 .quality__text span {
   color: var(--primary-color);
 }
 
-
-.quality{
+.quality {
   padding-top: 60px;
+  margin-bottom: 80px;
 }
 
-
-.quality__text{
-  padding-bottom: 35px;
+.quality__text {
+  padding-bottom: 110px;
 }
-.quality__text h1{
-  font-size:var(--title-font);
+.quality__text h1 {
+  font-size: var(--quality-title);
   font-weight: 700;
-  padding:0 20px;
+  padding: 0 20px;
   padding-bottom: 25px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.quality__list{
-  padding: 0 20px;
+.quality__list {
+  padding: 10px 20px;
   color: var(--secondary-color);
   font-size: var(--third-text);
-  list-style:disc;
+  list-style: disc;
   padding-bottom: 35px;
+  font-family: var(--secondary-font);
 }
 
-.quality__item:nth-child(1){
+.quality__item:nth-child(1) {
   padding-bottom: 20px;
 }
 
-.quality__btn{
+.quality__btn {
   color: white;
   background-color: var(--primary-color);
   padding: 14px 24px;
+  padding-right: 50px;
   border-radius: 10px;
   box-shadow: none;
   border: none;
   display: block;
   margin: 0 auto;
+  position: relative;
 }
 
-.quality__wrapper{
+.quality__btn::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 95px;
+  width: 20px;
+  height: 20px;
+  background-image: url(./img/icons/Group.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.quality__btn::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: -85px;
+  width: 110px;
+  height: 60px;
+  background-image: url(./img/icons/Restuerent/Image.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(105deg);
+}
+.quality__wrapper {
   display: flex;
   justify-content: center;
+}
+
+.quality__text h2 {
+  font-family: var(--main-font);
+  font-size: var(--title-font);
+}
+
+.quality__img__inner {
+  position: relative;
+}
+
+.quality__img__inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -30px;
+  width: 30px;
+  height: 35px;
+  background-image: url(./img/icons/Resturent/Image1);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(350deg);
+}
+
+.quality__text span {
+  padding: 0 10px;
+}
+
+.quality__inner.quality__animation .quality__wrapper {
+  animation-name: qualityAnimWrapper;
+  animation-duration: 1.5s;
+}
+
+.quality__inner.quality__animation .quality__text {
+  animation-name: qualityAnim;
+  animation-duration: 1.5s;
+}
+
+@keyframes qualityAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(100vh);
+  }
+  50% {
+    opacity: 0.5;
+  }
+
+  99% {
+    opacity: 1;
+    transform: translateX(0vh);
+  }
+}
+
+@keyframes qualityAnimWrapper {
+  0% {
+    opacity: 0;
+    transform: translateX(0vh);
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(-100vh);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0vh);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .quality__inner {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .quality__text {
+    width: 50%;
+  }
+
+  .quality__btn {
+    margin: 0;
+  }
+
+  .quality__img {
+    max-width: 200px;
+  }
+
+  .quality__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .quality__btn::after {
+    transform: rotate(12deg);
+    top: 40px;
+    left: 100px;
+  }
+
+  .quality__text h2 {
+    font-size: 36px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .quality__img {
+    max-width: 300px;
+  }
+
+  .quality__text {
+    max-width: 390px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .quality__img {
+    max-width: 300px;
+  }
+
+  .quality__text {
+    max-width: 560px;
+  }
+
+  .quality__text h2 {
+    font-size: 50px;
+  }
+}
+
+.restaurants {
+  padding: 60px 0;
+}
+
+.restaurants__text h2 {
+  font-family: var(--main-font);
+  text-align: center;
+  font-weight: 600;
+  font-size: var(--title-font);
+}
+
+.restaurants__list {
+  padding: 25px;
+}
+
+.restaurants__text h2 span {
+  color: var(--primary-color);
+}
+
+.restaurants__item {
+  background-color: var(--white-color);
+  box-shadow: 4.73px 56.755px 28.377px 0 rgba(229, 229, 229, 0.7);
+  margin-bottom: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 380px;
+  margin: 30px auto;
+}
+
+.restaurants__img {
+  max-width: 768px;
+  object-fit: cover;
+}
+
+.restaurants__h3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.restaurants__time {
+  cursor: var(--secondary-color);
+  list-style-type: disc;
+  align-items: center;
+  color: #8e97a6;
+}
+
+.restaurants__status {
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.healthy {
+  color: var(--healthy-color-text);
+  background-color: var(--healthy-color);
+}
+
+.trending {
+  color: var(--healthy-color-text-2);
+  background: var(--healthy-color-2);
+}
+
+.supreme {
+  color: var(--healthy-color-3);
+  background: var(--healthy-color-text-3);
+}
+
+.restaurants__reting {
+  padding-left: 28px;
+  position: relative;
+  color: #8e97a6;
+}
+
+.restaurants__reting::before {
+  position: absolute;
+  content: "";
+  background-image: url(./img/icons/healthy-star.svg);
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  top: -5px;
+  left: 0;
+}
+
+.healhty__div {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .restaurants__list {
+    display: flex;
+    gap: 20px;
+  }
+
+  .restaurants__saved {
+    margin-left: 70px;
+  }
+
+  .restaurants__list_2 {
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .restaurants__item {
+    max-width: 500px;
+  }
+}
+
+.dishes__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-items: center;
+}
+
+.dishes__text h2 {
+  text-align: center;
+  font-size: var(--quality-title);
+}
+
+.dishes__item__inner {
+  padding: 5px;
+}
+
+.dishes__item {
+  background-color: var(--white-color);
+  box-shadow: 4.73px 56.755px 28.377px 0 rgba(229, 229, 229, 0.7);
+  max-width: 225px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 15px;
+}
+
+.dishes__img {
+  object-fit: contain;
+  max-width: 150px;
+  width: 100%;
+  max-height: 150px;
+  height: 100%;
+}
+
+.dishes__heart__btn {
+  border: none;
+  background-color: var(--white-color);
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.dishes__status {
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.dishes__title {
+  margin-bottom: 10px;
+}
+
+.dishes__time {
+  color: var(--manatee-color);
+  
+}
+
+.dishes__price{
+  font-weight: 700;
+}
+.dishes__reting {
+  color: var(--manatee-color);
+  position: relative;
+  padding-left: 15px;
+}
+
+.time__wrapper{
+  padding-bottom: 15px;
+}
+
+.dishes__reting::before{
+  content: "";
+  position: absolute;
+  background-image: url(./img/icons/eatly-star.svg);
+  top: 3px;
+  left: 2px;
+  width:12px ;
+  height: 12px;
+}
+
+.dishes__add__btn{
+  background-color: #323142;
+  color: white;
+  border: none;
+  box-shadow: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.price__wrapper{
+  display: flex;
+  justify-content: space-between;
 }

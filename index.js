@@ -1,9 +1,11 @@
-let menuBtn = document.querySelector(".menu__btn");
-let link = document.querySelector(".header__link");
-let list = document.querySelector(".header__list");
-let restaurantsList = document.querySelector(".restaurants__list");
-let dishesList = document.querySelector(".dishes__list");
-let purchasesList = document.querySelector(".purchases__list");
+const menuBtn = document.querySelector(".menu__btn");
+const link = document.querySelector(".header__link");
+const list = document.querySelector(".header__list");
+const restaurantsList = document.querySelector(".restaurants__list");
+const dishesList = document.querySelector(".dishes__list");
+const purchasesList = document.querySelector(".purchases__list");
+const customersSay = document.querySelector(".customersay__list");
+const swiperWrapper = document.querySelector(".swiper-wrapper");
 
 menuBtn.addEventListener("click", () => {
   menuBtn.classList.toggle("active");
@@ -32,21 +34,16 @@ const customersScroll = () => {
 window.addEventListener("scroll", customersScroll);
 customersScroll();
 
-
-
 const qualityScroll = () => {
   const section = document.querySelector(".quality__inner");
   console.log(section);
   if (isElementInViewport(section)) {
-    
     section.classList.add("quality__animation");
     window.removeEventListener("scroll", qualityScroll);
   }
 };
 window.addEventListener("scroll", qualityScroll);
 qualityScroll();
-
-
 
 const restaurantScroll = () => {
   const section = document.querySelector(".restaurants__inner");
@@ -59,7 +56,6 @@ const restaurantScroll = () => {
 window.addEventListener("scroll", restaurantScroll);
 restaurantScroll();
 
-
 const dishScroll = () => {
   const section = document.querySelector(".dishes__inner");
   if (isElementInViewport(section)) {
@@ -69,7 +65,6 @@ const dishScroll = () => {
 };
 window.addEventListener("scroll", dishScroll);
 dishScroll();
-
 
 const restaurantsData = [
   {
@@ -200,3 +195,121 @@ const createDishesList = dishesData
 
   .join("");
 dishesList.innerHTML = createDishesList;
+
+const purchasesData = [
+  {
+    id: 1,
+    imgageUrl: "./img/FoodImage1.jpg",
+    title: "Chicken Hell",
+    time: "On The Way",
+    endTime: "3:09 PM",
+    saved: "",
+  },
+  {
+    id: 2,
+    imgageUrl: "./img/FoodImage2.jpg",
+    title: "Swe Dish",
+    time: "Delivered",
+    endTime: "Yesterday",
+    saved: "",
+  },
+  {
+    id: 3,
+    imgageUrl: "./img/FoodImage3.jpg",
+    title: "Swe Dish",
+    time: "Cancelled",
+    endTime: "Yesterday",
+    saved: "",
+  },
+];
+
+const createPurchasesList = purchasesData
+  .map((purchas) => {
+    const timeClass = purchas.time === "Cancelled" ? "cancelled" : "usuall";
+    return `
+      <li class="purchases__item">
+      <img class="purchases__img"  src="${purchas.imgageUrl}" alt="image">
+      <div class="purchases__item__inner">
+      <h3 class="purchases__title">${purchas.title}</h3>
+      <div class="purchases__wrapper">
+      <span class=" ${timeClass} purchases__time ">${purchas.time}</span>
+    </div>
+    <span class="purchases__endtime">${purchas.endTime}</span>
+      </div>
+    </li>
+    `;
+  })
+
+  .join("");
+purchasesList.innerHTML = createPurchasesList;
+
+const customersData = [
+  {
+    id: 1,
+    imgageUrl: "./img/customersa-haed.jpg",
+    title: "Alexander R.",
+    time: "01 Year With Us ",
+    imgageUrl2: "./img/icons/Pathcustomersay.svg",
+    stroke:
+      "“ Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time ”",
+    star: "./img/icons/customersayStars.svg",
+  },
+];
+
+const createCustomersayList = customersData
+  .map((custom) => {
+    return `
+      <li class="customersay__item">
+      <div class="customersay__wrapper">
+        <img class="customersay__img"  src="${custom.imgageUrl}" alt="image">
+        <div class="customersay__item__inner">
+          <h3 class="customersay__title">${custom.title}</h3>
+          <span class="customersay__p">${custom.time}</span>
+        </div>
+      </div>
+      <span class="customersay__stroke">${custom.stroke}</span>
+      <img class="customersay__star"   src="${custom.star}" alt="image">
+    </li>
+    `;
+  })
+
+  .join("");
+customersSay.innerHTML = createCustomersayList;
+
+const swiperData = [
+  {
+    id: 1,
+    stroke:
+      " Online nline invoice payment helps companies save time, are faster and save maximum effort for the clien ",
+    star: "./img/icons/customersayStars.svg",
+  },
+
+  {
+    id: 2,
+    stroke:
+      " Online nline invoice payment helps companies save time, are faster and save maximum effort for the clien ",
+    star: "./img/icons/customersayStars.svg",
+  },
+
+  {
+    id: 3,
+    stroke:
+      " Online nline invoice payment helps companies save time, are faster and save maximum effort for the clien ",
+    star: "./img/icons/customersayStars.svg",
+  },
+];
+
+const createSwiperList = swiperData
+  .map((swiper) => {
+    return `
+    <div class="swiper-slide">
+      <div class="swiper__item">
+        <span class="swiper__stroke">${swiper.stroke}</span>
+        <img class="swiper__star"   src="${swiper.star}" alt="image">
+      </div>
+    </div>
+    `;
+  })
+
+  .join("");
+swiperWrapper.innerHTML  = createSwiperList

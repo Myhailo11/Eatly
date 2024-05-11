@@ -142,15 +142,88 @@
               </div>
             </div>
           </div>
+          <div class="purchases__window">
+            <div class="purchases__inner__2">
+              <div class="window__wrapper">
+                <div class="window__div">
+                  <h2>Purchases</h2>
+                  <button class="purchases__btn">This month</button>
+                </div>
+                <ul class="purchases__list__2">
+                  <li class="purchases__item__2">
+                    <div class="expense__img__div">
+                      <img
+                        class="expense__img"
+                        src="./img/icons/purshwallet.svg"
+                        alt=""
+                      />
+                    </div>
+                    <h3>Expense</h3>
+                    <span>Increased By 10%</span>
+                    <p>$409.00</p>
+                    <img src="./img/divider-blue.jpg" alt="" />
+                  </li>
+                  <li class="purchases__item__2">
+                    <div class="voucher__img__div">
+                      <img
+                        class="voucher__img"
+                        src="./img/icons/purshmoney.svg"
+                        alt=""
+                      />
+                    </div>
+                    <h3>Vocher Usage</h3>
+                    <span>Increased By 5%</span>
+                    <p>$45.78</p>
+                    <img src="./img/divider-yellow.jpg" alt="" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="discount">
+        <div class="container">
+          <div class="discount__inner">
+            <p class="discount__p">GET 50%</p>
+            <div class="discount__input">
+              <input type="text" placeholder=" Enter Your Email Address" />
+              <button class="discount__btn">SUBSCRIBE</button>
+            </div>
+            <img class="discount__img" src="./img/Food-Image5.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <section class="customersay">
+        <div class="container">
+          <div class="customersay__text">
+            <h2><span>Customer</span> Say</h2>
+            <ul class="customersay__list"></ul>
+          </div>
+        </div>
+      </section>
+      <section class="swiper">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+<!-- 
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div> -->
+          </div>
+          <div class="swiper-scrollbar"></div>
+        </div>
       </section>
     </main>
-    <footer>
-      <div class="purchases__wrapper">
-        <span class="purchases__time"></span>
-      </div>
-      <span class="purchases__endtime"></span>
-    </footer>
-    <script src="./index.js">
+    <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./index.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        scrollbar: {
+          el: ".swiper-scrollbar",
+          hide: true,
+        },
+      });
     </script>
   </body>
 </html>
